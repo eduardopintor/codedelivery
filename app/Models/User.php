@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeDelivery;
+namespace CodeDelivery\Model;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
