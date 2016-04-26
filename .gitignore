@@ -1,0 +1,13 @@
+.idea
+/vendor
+/node_modules
+/public/storage
+
+# Laravel 5 & Lumen specific
+Homestead.yaml
+Homestead.json
+bootstrap/cache/
+storage/
+.env.*.php
+.env.php
+.env
