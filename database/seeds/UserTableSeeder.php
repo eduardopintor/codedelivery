@@ -1,8 +1,9 @@
 <?php
 
+use CodeDelivery\Models\User;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserTableSeeder::class);
-        $this->call(CategoryTableSeeder::class);
+        factory(User::class, 10)->create();
     }
 }
