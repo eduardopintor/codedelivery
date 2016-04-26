@@ -4,8 +4,6 @@
 /public/storage
 
 # Laravel 5 & Lumen specific
-Homestead.yaml
-Homestead.json
 bootstrap/cache/
 storage/
 .env.*.php

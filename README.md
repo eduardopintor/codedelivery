@@ -1,3 +1,6 @@
+# CodeDelivery
+Código de exercício do Curso 'Laravel 5.1 com Ionic + Cordova' da Code Education
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
@@ -25,3 +28,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
