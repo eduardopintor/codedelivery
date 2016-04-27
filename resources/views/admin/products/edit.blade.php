@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-    <h3>Editando Categoria: {{ $category->name }}</h3>
+    <h3>Editando Produto: {{ $product->name }}</h3>
 
     @include('errors._check')
 
-    {!! Form::model($category, ['route' => ['admin.categories.update', $category->id]]) !!}
+    {!! Form::model($product, ['route' => ['admin.products.update', $product->id]]) !!}
 
-    @include('admin.categories.form')
+    @include('admin.products.form')
 
     {!! Form::submit('Salvar',['class' => 'btn btn-primary']) !!}
 
