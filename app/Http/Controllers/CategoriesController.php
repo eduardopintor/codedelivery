@@ -15,4 +15,10 @@ class CategoriesController extends Controller
 
         return view('admin.categories.index', compact('categories'));
     }
+
+    public function create()
+    {
+        return view('admin.categories.create');
+
+    }
 }

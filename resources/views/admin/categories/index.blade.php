@@ -4,7 +4,7 @@
 <div class="container">
     <h3>Categorias</h3>
 
-    <p><a href="#" class="btn btn-primary">Nova Categoria</a></p>
+    <p><a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Nova Categoria</a></p>
 
     <table class="table table-bordered">
         <thead>
@@ -25,7 +25,7 @@
         </tbody>
     </table>
 
-    {!! $categories->render() !!} 
+    {!! $categories->render() !!}
 
 </div>
 @endsection
