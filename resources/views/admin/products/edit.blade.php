@@ -8,9 +8,9 @@
 
     {!! Form::model($product, ['route' => ['admin.products.update', $product->id]]) !!}
 
-    @include('admin.products.form')
+    @include('admin.products._form')
 
-    {!! Form::submit('Salvar',['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Salvar Produto',['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}
 

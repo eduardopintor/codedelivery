@@ -2,7 +2,8 @@
 
 namespace CodeDelivery\Http\Controllers;
 
-use CodeDelivery\Http\Requests\AdminCategoryRequest;
+use CodeDelivery\Http\Requests\AdminProductRequest;
+use CodeDelivery\Repositories\CategoryRepository;
 use CodeDelivery\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,15 @@ class ProductsController extends Controller
      * @var ProductRepository
      */
     private $repository;
+    /**
+     * @var CategoryRepository
+     */
+    private $categoryRepository;
 
-    public function __construct(ProductRepository $repository)
+    public function __construct(ProductRepository $repository, CategoryRepository $categoryRepository)
     {
         $this->repository = $repository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     public function index()
@@ -29,19 +35,22 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('admin.products.create');
+        $categories = $this->categoryRepository->lists('name', 'id');
+
+        return view('admin.products.create', compact('categories'));
 
     }
 
     public function edit($id)
     {
         $product = $this->repository->find($id);
+        $categories = $this->categoryRepository->lists('name', 'id');
 
-        return view('admin.products.edit', compact('product'));
+        return view('admin.products.edit', compact('product', 'categories'));
 
     }
 
-    public function store(AdminCategoryRequest $request)
+    public function store(AdminProductRequest $request)
     {
         $data = $request->all();
         $this->repository->create($data);
@@ -49,7 +58,7 @@ class ProductsController extends Controller
         return redirect()->route('admin.products.index');
     }
 
-    public function update(AdminCategoryRequest $request, $id)
+    public function update(AdminProductRequest $request, $id)
     {
         $data = $request->all();
         $this->repository->update($data, $id);

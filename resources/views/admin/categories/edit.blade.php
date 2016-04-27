@@ -8,9 +8,9 @@
 
     {!! Form::model($category, ['route' => ['admin.categories.update', $category->id]]) !!}
 
-    @include('admin.categories.form')
+    @include('admin.categories._form')
 
-    {!! Form::submit('Salvar',['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Salvar Categoria',['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}
 

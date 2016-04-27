@@ -8,7 +8,7 @@
 
     {!! Form::open(['route' => 'admin.products.store']) !!}
 
-    @include('admin.products.form')
+    @include('admin.products._form')
 
     {!! Form::submit('Criar Produto',['class' => 'btn btn-primary']) !!}
 

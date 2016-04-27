@@ -8,7 +8,7 @@
 
     {!! Form::open(['route' => 'admin.categories.store']) !!}
 
-    @include('admin.categories.form')
+    @include('admin.categories._form')
 
     {!! Form::submit('Criar Categoria',['class' => 'btn btn-primary']) !!}
 
