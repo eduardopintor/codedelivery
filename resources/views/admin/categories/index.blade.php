@@ -1,11 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Olá {{ $nome  }}</h1>
+<div class="container">
+    <h3>Categorias</h3>
 
-<ul>
-    @foreach($liguagens as $linguagem)
-        <li>{{ $linguagem }}</li>
-    @endforeach
-</ul>
+    <p><a href="#" class="btn btn-primary">Nova Categoria</a></p>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($categories as $category)
+        <tr>
+            <td>{{ $category->id }}</td>
+            <td>{{ $category->name }}</td>
+            <td></td>
+        </tr>
+        @endforeach
+        </tbody>
+    </table>
+
+</div>
 @endsection

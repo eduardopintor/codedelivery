@@ -2,22 +2,16 @@
 
 namespace CodeDelivery\Http\Controllers;
 
+use CodeDelivery\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
 
 class CategoriesController extends Controller
 {
-    public function index()
+    public function index(CategoryRepository $repository)
     {
-        $data = [
-            'nome' => 'Eduardo',
-            'liguagens' => [
-                'PHP',
-                'Java',
-                'Ruby'
-            ]
-        ];
-        return view('admin.categories.index', $data);
+        $categories =  $repository->all();
+        return view('admin.categories.index', compact('categories'));
     }
 }
