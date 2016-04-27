@@ -19,3 +19,9 @@ Route::get('test', function () {
     $repository = app()->make('CodeDelivery\Repositories\CategoryRepository');
     return $repository->all();
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+
