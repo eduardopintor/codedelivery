@@ -24,7 +24,10 @@
             <td>{{ $product->category->name }}</td>
             <td>{{ $product->price }}</td>
             <td>
-                <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-success btn-sm">Editar</a>
+                <div class="btn-group" role="group" aria-label="actions">
+                    <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-success btn-sm">Editar</a>
+                    <a href="{{ route('admin.products.destroy', ['id' => $product->id]) }}" class="btn btn-danger btn-sm">Remover</a>
+                </div>
             </td>
         </tr>
         @endforeach

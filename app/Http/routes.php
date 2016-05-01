@@ -24,6 +24,7 @@ Route::post('admin/categories/update/{id}', ['as' => 'admin.categories.update' ,
 Route::get('admin/products', ['as' => 'admin.products.index' ,'uses' =>'ProductsController@index']);
 Route::get('admin/products/create', ['as' => 'admin.products.create' ,'uses' => 'ProductsController@create']);
 Route::get('admin/products/edit/{id}', ['as' => 'admin.products.edit' ,'uses' => 'ProductsController@edit']);
+Route::get('admin/products/destroy/{id}', ['as' => 'admin.products.destroy' ,'uses' => 'ProductsController@destroy']);
 Route::post('admin/products/store', ['as' => 'admin.products.store' ,'uses' => 'ProductsController@store']);
 Route::post('admin/products/update/{id}', ['as' => 'admin.products.update' ,'uses' => 'ProductsController@update']);
 
