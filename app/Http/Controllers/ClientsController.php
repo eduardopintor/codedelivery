@@ -5,7 +5,6 @@ namespace CodeDelivery\Http\Controllers;
 use CodeDelivery\Http\Requests\AdminClientRequest;
 use CodeDelivery\Repositories\ClientRepository;
 use CodeDelivery\Services\ClientsServices;
-use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
 

@@ -4,7 +4,6 @@ namespace CodeDelivery\Http\Controllers;
 
 use CodeDelivery\Http\Requests\AdminCategoryRequest;
 use CodeDelivery\Repositories\CategoryRepository;
-use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
 

@@ -5,7 +5,6 @@ namespace CodeDelivery\Http\Controllers;
 use CodeDelivery\Http\Requests\AdminProductRequest;
 use CodeDelivery\Repositories\CategoryRepository;
 use CodeDelivery\Repositories\ProductRepository;
-use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
 

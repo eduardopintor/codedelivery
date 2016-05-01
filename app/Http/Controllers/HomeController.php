@@ -3,7 +3,6 @@
 namespace CodeDelivery\Http\Controllers;
 
 use CodeDelivery\Http\Requests;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
