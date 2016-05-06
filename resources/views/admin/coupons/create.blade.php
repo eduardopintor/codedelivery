@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h3>Nova Cupom</h3>
+    <h3>Novo Cupom</h3>
 
     @include('errors._check')
 

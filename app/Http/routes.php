@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+//    Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
 
     Route::group(['prefix' => 'clients', 'as' => 'clients.'], function(){
         Route::get('/', ['as' => 'index' ,'uses' =>'ClientsController@index']);

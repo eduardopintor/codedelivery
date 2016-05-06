@@ -13,7 +13,7 @@ class AdminCouponRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class AdminCouponRequest extends Request
     public function rules()
     {
         return [
-            //
+            'code' => 'required|min:3',
+            'value' => 'required',
         ];
     }
 }

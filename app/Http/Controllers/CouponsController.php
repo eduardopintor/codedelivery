@@ -34,9 +34,9 @@ class CouponsController extends Controller
 
     public function edit($id)
     {
-        $coupons = $this->repository->find($id);
+        $coupon = $this->repository->find($id);
 
-        return view('admin.coupons.edit', compact('coupons'));
+        return view('admin.coupons.edit', compact('coupon'));
 
     }
 
