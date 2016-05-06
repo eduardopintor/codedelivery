@@ -4,6 +4,6 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('DeliveryMan', 'Entregador:') !!}
-    {!! Form::select('deliveryman', $deliveryman, null, ['class' => 'form-control']) !!}
+    {!! Form::label('Deliveryman', 'Entregador:') !!}
+    {!! Form::select('user_deliveryman_id', $deliveryman, null, ['class' => 'form-control']) !!}
 </div>

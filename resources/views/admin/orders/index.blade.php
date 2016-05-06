@@ -23,13 +23,15 @@
             <td>{{ $order->total }}</td>
             <td>{{ $order->created_at }}</td>
             <td>
-                @foreach($order->items as $item)
-                <li>{{ $item->qty }} - {{ $item->product->name }} - {{ $item->product->price }}</li>
-                @endforeach
+                <ul>
+                    @foreach($order->items as $item)
+                        <li>{{ $item->qty }} - {{ $item->product->name }} - {{ $item->product->price }}</li>
+                    @endforeach
+                </ul>
             </td>
             <td>
-                @if($order->deliveyman)
-                    {{ $order->deliveryman_id->name }}
+            @if($order->deliveryman)
+                    {{ $order->deliveryman->name }}
                 @else
                     --
                 @endif
