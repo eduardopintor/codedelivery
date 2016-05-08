@@ -66,6 +66,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function() {
     Route::group(['prefix' => 'order', 'as' => 'order.'], function(){
         Route::get('/', ['as' => 'index' ,'uses' =>'CheckoutController@index']);
         Route::get('create', ['as' => 'create' ,'uses' => 'CheckoutController@create']);
+        Route::post('store', ['as' => 'store' ,'uses' => 'CheckoutController@store']);
     });
 
 });
