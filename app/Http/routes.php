@@ -15,8 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
-//    Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
 
     Route::group(['prefix' => 'clients', 'as' => 'clients.'], function(){
         Route::get('/', ['as' => 'index' ,'uses' =>'ClientsController@index']);
@@ -61,7 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
 
 });
 
-Route::group(['prefix' => 'customer', 'as' => 'customer.'], function() {
+Route::group(['prefix' => 'customer', 'middleware' => 'auth.checkrole:client', 'as' => 'customer.'], function() {
 
     Route::group(['prefix' => 'order', 'as' => 'order.'], function(){
         Route::get('/', ['as' => 'index' ,'uses' =>'CheckoutController@index']);
@@ -70,10 +73,4 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function() {
     });
 
 });
-
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
-
 

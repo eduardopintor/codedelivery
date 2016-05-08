@@ -48,11 +48,18 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ route('admin.clients.index') }}">Clientes</a></li>
-                    <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
-                    <li><a href="{{ route('admin.products.index') }}">Produtos</a></li>
-                    <li><a href="{{ route('admin.coupons.index') }}">Cupons</a></li>
-                    <li><a href="{{ route('admin.orders.index') }}">Pedidos</a></li>
+                    @if(Auth::user())
+                        @if(Auth::user()->role == 'admin')
+                        <li><a href="{{ route('admin.clients.index') }}">Clientes</a></li>
+                        <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+                        <li><a href="{{ route('admin.products.index') }}">Produtos</a></li>
+                        <li><a href="{{ route('admin.coupons.index') }}">Cupons</a></li>
+                        <li><a href="{{ route('admin.orders.index') }}">Pedidos</a></li>
+                        @elseif(Auth::user()->role == 'client')
+                        <li><a href="{{ route('customer.order.index') }}">MeusPedidos</a></li>
+                        @endif
+                    @endif
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
