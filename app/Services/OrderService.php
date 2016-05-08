@@ -32,7 +32,7 @@ class OrderService
 
     public function create(array $data)
     {
-        \DB::beginTransactio();
+        \DB::beginTransaction();
         try {
             $data['status'] = 0;
 
@@ -51,7 +51,7 @@ class OrderService
             $total = 0;
 
             foreach ($items as $item) {
-                $item['price'] = $this->productRepository->findByField($item['product_id'])->price;
+                $item['price'] = $this->productRepository->find($item['product_id'])->price;
                 $order->items()->create($item);
                 $total += $item['price'] * $item['qty'];
             }

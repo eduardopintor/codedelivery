@@ -27,7 +27,7 @@ class CheckoutController extends Controller
     /**
      * @var OrderService
      */
-    private $orderService;
+    private $service;
 
     public function __construct(
         OrderRepository $repository,
@@ -39,13 +39,12 @@ class CheckoutController extends Controller
         $this->repository = $repository;
         $this->userRepository = $userRepository;
         $this->productRepository = $productRepository;
-        $this->orderService = $orderService;
+        $this->service = $service;
     }
 
     public function index()
     {
         $clientId = $this->userRepository->find(Auth::user()->id)->client->id;
-
         $orders = $this->repository->scopeQuery(function($query) use($clientId){
             return $query->where('client_id', '=', $clientId);
         })->paginate();
@@ -67,7 +66,7 @@ class CheckoutController extends Controller
         $clientId = $this->userRepository->find(Auth::user()->id)->client->id;
         $data['client_id'] =  $clientId;
 
-        $this->create($data);
+        $this->service->create($data);
 
         return redirect()->route('customer.order.index');
     }
