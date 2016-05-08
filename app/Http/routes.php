@@ -74,16 +74,31 @@ Route::group(['prefix' => 'customer', 'middleware' => 'auth.checkrole:client', '
 
 });
 
-Route::group(['prefix' => 'api', 'middleware' => 'oauth', 'as' => 'api.'], function(){
-    Route::get('pedidos', function(){
-        return [
-            'id', '1',
-            'name', 'Eduardo Pintor',
-            'total', '10.00',
-        ];
-    });
-});
-
 Route::post('oauth/access_token', function() {
     return Response::json(Authorizer::issueAccessToken());
+});
+
+
+Route::group(['prefix' => 'api', 'middleware' => 'oauth', 'as' => 'api.'], function(){
+    Route::group(['prefix' => 'client', 'as' => 'client.'], function() {
+        Route::get('orders', function(){
+            return [
+                'id', '1',
+                'name', 'Eduardo Pintor - Cliente',
+                'total', '10.00',
+            ];
+        });
+    });
+
+    Route::group(['prefix' => 'deliveryman', 'as' => 'deliveryman.'], function() {
+        Route::get('orders', function(){
+            return [
+                'id', '1',
+                'name', 'Eduardo Pintor - Entregador',
+                'total', '10.00',
+            ];
+        });
+
+    });
+
 });
