@@ -38,6 +38,7 @@
                 </tr>
                 </tbody>
             </table>
+            {!! Form::submit('Criar Pedido',['class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>
