@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 class PasswordGrantVerifier
 {
 
+    /**
+     * @param $username
+     * @param $password
+     * @return bool
+     */
     public function verify($username, $password)
     {
         $credentials = [
