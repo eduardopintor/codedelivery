@@ -34,7 +34,7 @@
                         </select>
                     </td>
                     <td>
-                        {!! Form::text('items[0][qty]', 1, ['class' => 'form-control']) !!}
+                        {!! Form::text('items[qty[0]]', 1, ['class' => 'form-control']) !!}
                     </td>
                 </tr>
                 </tbody>

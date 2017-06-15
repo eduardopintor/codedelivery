@@ -19,7 +19,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth.checkrole:admin', 'domain' => 'localhost:8000'], 'as' => 'admin.'], function(){
 
     Route::group(['prefix' => 'clients', 'as' => 'clients.'], function(){
         Route::get('/', ['as' => 'index' ,'uses' =>'ClientsController@index']);

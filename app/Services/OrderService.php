@@ -45,7 +45,7 @@ class OrderService
             }
 
             $items = $data['items'];
-            unset($data['itemas']);
+            unset($data['items']);
 
             $order = $this->orderRepository->create($data);
             $total = 0;
